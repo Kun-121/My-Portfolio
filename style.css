@@ -17,6 +17,7 @@ body {
   max-width: 1200px;
   margin: auto;
   overflow: hidden;
+  text-align: center; /* Ensure content is centered */
 }
 
 /* Header */
@@ -57,17 +58,46 @@ header .btn:hover {
 }
 
 h2 {
-  text-align: center;
   font-size: 2.8em;
   margin-bottom: 40px;
 }
 
 p {
-  text-align: center;
   font-size: 1.2em;
   margin-bottom: 40px;
 }
 
+/* About Me Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.about-photo img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  /* Keep image aligned properly */
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left; /* Ensure text inside is aligned left */
+  padding-left: 30px;
+}
+
+.about-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Projects Section */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -107,45 +137,6 @@ p {
 .project .btn:hover {
   background-color: #0288d1;
 }
-
-
-
-
-
-
-/* About Me Section */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  flex-wrap: wrap;
-}
-
-.about-photo img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 30px;
-}
-
-.about-text {
-  flex: 1;
-  max-width: 600px;
-  float: right;
-}
-
-.about-text p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-
-
-
-
-
 
 /* Contact Form */
 form {
@@ -214,7 +205,8 @@ footer p {
   .about-photo img {
     width: 200px;
     height: 200px;
-    float: left;
+    margin-right: 0;
+    margin-bottom: 20px; /* Make sure the image doesn't overlap text */
   }
 
   .about-container {
@@ -224,6 +216,7 @@ footer p {
 
   .about-text {
     max-width: 100%;
+    padding-left: 0; /* Reset padding for mobile */
   }
 }
 
@@ -248,5 +241,9 @@ footer p {
   form input,
   form textarea {
     font-size: 1em;
+  }
+
+  .project {
+    max-width: 100%; /* Ensure projects take up full width on small screens */
   }
 }
